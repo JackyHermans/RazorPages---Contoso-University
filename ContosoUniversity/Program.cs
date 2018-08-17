@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;             // CreateScope
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ContosoUniversity.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContosoUniversity
 {

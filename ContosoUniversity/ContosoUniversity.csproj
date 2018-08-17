@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180814153117_ComplexDataModel.cs" />
+    <Compile Remove="Migrations\20180814153117_ComplexDataModel.Designer.cs" />
+    <Compile Remove="Migrations\20180816065828_ComplexDataModel.cs" />
+    <Compile Remove="Migrations\20180816065828_ComplexDataModel.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
