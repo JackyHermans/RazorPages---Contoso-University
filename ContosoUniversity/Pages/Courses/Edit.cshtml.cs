@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Models;
+using ContosoUniversity.DAL.Models;
 
 namespace ContosoUniversity.Pages.Courses
 {
     public class EditModel : DepartmentNamePageModelModel
     {
-        private readonly ContosoUniversity.Models.SchoolContext _context;
+        private readonly ContosoUniversity.DAL.Models.SchoolContext _context;
 
-        public EditModel(ContosoUniversity.Models.SchoolContext context)
+        public EditModel(ContosoUniversity.DAL.Models.SchoolContext context)
         {
             _context = context;
         }

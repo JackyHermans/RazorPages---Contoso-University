@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Models;
-using ContosoUniversity.Models.SchoolViewModels;            // Add VM
+using ContosoUniversity.DAL.Models;
+using ContosoUniversity.DAL.Models.SchoolViewModels;            // Add VM
 
 namespace ContosoUniversity.Pages.Instructors
 {
     public class IndexModel : PageModel
     {
-        private readonly ContosoUniversity.Models.SchoolContext _context;
+        private readonly ContosoUniversity.DAL.Models.SchoolContext _context;
 
-        public IndexModel(ContosoUniversity.Models.SchoolContext context)
+        public IndexModel(ContosoUniversity.DAL.Models.SchoolContext context)
         {
             _context = context;
         }
