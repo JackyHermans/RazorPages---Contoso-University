@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using ContosoUniversity.Data;
 using ContosoUniversity.Models;
 
 namespace ContosoUniversity.Pages.Instructors
@@ -18,7 +19,7 @@ namespace ContosoUniversity.Pages.Instructors
             _context = context;
         }
 
-        public Course Course { get; set; }
+        public Instructor Instructor { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,10 +28,9 @@ namespace ContosoUniversity.Pages.Instructors
                 return NotFound();
             }
 
-            Course = await _context.Courses
-                .Include(c => c.Department).FirstOrDefaultAsync(m => m.CourseID == id);
+            Instructor = await _context.Instructors.SingleOrDefaultAsync(m => m.ID == id);
 
-            if (Course == null)
+            if (Instructor == null)
             {
                 return NotFound();
             }
