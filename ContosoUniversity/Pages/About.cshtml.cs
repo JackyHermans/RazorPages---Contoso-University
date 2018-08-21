@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoUniversity.Models.SchoolViewModels;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.DAL.Models;
-using ContosoUniversity.DAL.Data;
+using ContosoUniversity.DataAccess.Models.SchoolViewModels;
+using ContosoUniversity.DataAccess.Entities;
 
 namespace ContosoUniversity.Pages
 {
@@ -19,20 +18,19 @@ namespace ContosoUniversity.Pages
             _context = context;
         }
 
-        //public IList<EnrollmentDateGroup> Student { get; set; }
-        public IList<ContosoUniversity.DAL.Models.SchoolViewModels.EnrollmentDateGroup> Student { get; set; }
+         public IList<EnrollmentDateGroup> Student { get; set; }
 
         public async Task OnGetAsync()
         {
-            IQueryable<ContosoUniversity.DAL.Models.SchoolViewModels.EnrollmentDateGroup> data =
+             IQueryable < EnrollmentDateGroup > data =
                 from student in _context.Student
                 group student by student.EnrollmentDate into dateGroup
-                select new ContosoUniversity.DAL.Models.SchoolViewModels.EnrollmentDateGroup()
+                select new EnrollmentDateGroup()
                 {
                     EnrollmentDate = dateGroup.Key,
                     StudentCount = dateGroup.Count()
                 };
-            
+                        
             Student = await data.AsNoTracking().ToListAsync();
         }
     }

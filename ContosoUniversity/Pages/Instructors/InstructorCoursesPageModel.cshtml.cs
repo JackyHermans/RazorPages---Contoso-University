@@ -4,9 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoUniversity.DAL.Data;
-using ContosoUniversity.DAL.Models;
-using ContosoUniversity.DAL.Models.SchoolViewModels;
+using ContosoUniversity.DataAccess.Entities;
+using ContosoUniversity.DataAccess.Models.SchoolViewModels;
 
 namespace ContosoUniversity.Pages.Instructors
 {

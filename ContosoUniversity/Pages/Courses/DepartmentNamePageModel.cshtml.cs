@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoUniversity.DAL.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.DAL.Models;
+using ContosoUniversity.DataAccess.Entities;
 
 namespace ContosoUniversity.Pages.Courses
 {

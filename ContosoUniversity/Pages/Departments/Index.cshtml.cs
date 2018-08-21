@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.DAL.Models;
+using ContosoUniversity.DataAccess.Entities;
 
 namespace ContosoUniversity.Pages.Departments
 {
     public class IndexModel : PageModel
     {
-        private readonly ContosoUniversity.DAL.Models.SchoolContext _context;
+        private readonly SchoolContext _context;
 
-        public IndexModel(ContosoUniversity.DAL.Models.SchoolContext context)
+        public IndexModel(SchoolContext context)
         {
             _context = context;
         }

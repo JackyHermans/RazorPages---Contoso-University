@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using ContosoUniversity.DAL.Models;                         // SchoolContext
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;             // CreateScope
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using ContosoUniversity.DAL.Data;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.DAL;
+using ContosoUniversity.DataAccess.Entities;
+using ContosoUniversity.DataAccess.Data;
 
 namespace ContosoUniversity
 {

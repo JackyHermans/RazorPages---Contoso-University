@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ContosoUniversity.DAL\ContosoUniversity.DAL.csproj" />
+    <ProjectReference Include="..\ContosoUniversity.BusinessLogic\ContosoUniversity.BusinessLogic.csproj" />
+    <ProjectReference Include="..\ContosoUniversity.DataAccess\ContosoUniversity.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
