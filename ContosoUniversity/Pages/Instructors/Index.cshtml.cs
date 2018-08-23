@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.DataAccess.Entities;
 using ContosoUniversity.DataAccess.Models.SchoolViewModels;            // Add VM
+using ContosoUniversity.Models.SchoolViewModels;
 
 namespace ContosoUniversity.Pages.Instructors
 {

@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{C5364B56-C6E0-4E24-9E38-5E8B641D9573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity.DataAccess", "ContosoUniversity.DataAccess\ContosoUniversity.DataAccess.csproj", "{209CF539-5B10-4C1E-8D42-303010E48131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity.DataAccess", "ContosoUniversity.DataAccess\ContosoUniversity.DataAccess.csproj", "{209CF539-5B10-4C1E-8D42-303010E48131}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity.BusinessLogic", "ContosoUniversity.BusinessLogic\ContosoUniversity.BusinessLogic.csproj", "{B57FC1DC-0429-4A3E-9840-F66EAD986C43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity.BusinessLogic", "ContosoUniversity.BusinessLogic\ContosoUniversity.BusinessLogic.csproj", "{B57FC1DC-0429-4A3E-9840-F66EAD986C43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
