@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.DataAccess.Entities;
+using ContosoUniversity.DataAccess.Models.SchoolViewModels;
 
 namespace ContosoUniversity.Pages.Enrollments
 {
@@ -18,11 +19,13 @@ namespace ContosoUniversity.Pages.Enrollments
             _context = context;
         }
 
-        public IList<Enrollment> Enrollment { get;set; }
+        public EnrollmentIndexData Enrollment { get;set; }
+        public int EnrollmentID { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            Enrollment = await _context.Enrollment
+            Enrollment = new EnrollmentIndexData();
+            Enrollment.Enrollments = await _context.Enrollment
                 .Include(e => e.Course)
                 .Include(e => e.Student)
                 .ToListAsync();

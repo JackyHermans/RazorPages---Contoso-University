@@ -13,29 +13,17 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].Student.FirstMidName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].Student.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].CourseID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].Course)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].Course.Credits)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Enrollment[0].Grade)
-            </th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Grade</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Enrollment) {
+@foreach (var item in Model.Enrollment.Enrollments) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Student.FirstMidName)

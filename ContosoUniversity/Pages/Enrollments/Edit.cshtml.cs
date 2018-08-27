@@ -7,11 +7,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.DataAccess.Entities;
-using ContosoUniversity.DataAccess.Models.SchoolViewModels;
 
 namespace ContosoUniversity.Pages.Enrollments
 {
-    public class EditModel : PageModel
+    public class EditModel : EnrollmentNamePageModel
     {
         private readonly ContosoUniversity.DataAccess.Entities.SchoolContext _context;
 
@@ -19,8 +18,6 @@ namespace ContosoUniversity.Pages.Enrollments
         {
             _context = context;
         }
-
-        public int MyProperty { get; set; }
 
         [BindProperty]
         public Enrollment Enrollment { get; set; }
@@ -41,10 +38,42 @@ namespace ContosoUniversity.Pages.Enrollments
             {
                 return NotFound();
             }
-           ViewData["CourseID"] = new SelectList(_context.Courses, "CourseID", "CourseID");
-           ViewData["StudentID"] = new SelectList(_context.Student, "ID", "FirstMidName");
+           //ViewData["CourseTitle"] = new SelectList(_context.Courses, "CourseID", "CourseID");
+           ViewData["StudentFullName"] = new SelectList(_context.Student, "FullName", "FullName");
+
+            Enrollment = await _context.Enrollment
+                .Include(e => e.Course.Title)
+                .Include(e => e.Student.FullName)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.EnrollmentID == id);
+
+            if (Enrollment == null)
+            {
+                return NotFound();
+            }
             return Page();
         }
+
+        //public async Task<IActionResult> OnPostAsync(int? id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var enrollmentToUpdate = await _context.Enrollment
+        //        .Include(e => e.Course.Title)
+        //        .Include(e => e.Student.FullName)
+        //        .FirstOrDefaultAsync(m => m.EnrollmentID == id);
+
+        //    if (await TryUpdateModelAsync<Student>(
+        //        enrollmentToUpdate,
+        //        "enrollmentStudent",
+        //        e => e.FullName))
+        //    {
+        //        await _context.SaveChangesAsync();))
+        //    }
+        //}
 
         public async Task<IActionResult> OnPostAsync()
         {
